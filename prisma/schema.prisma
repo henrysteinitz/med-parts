@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Unit {
+  id                         Int       @default(autoincrement()) @id
+  asset_description          String
+  asset_manufacturer         String
+  asset_model                String
+  part_type                  String
+  part_description           String
+  part_number     /. ,k           Int
+  price 				             Int?
+  unit_of_measure            String
+  core_required              Boolean
+  linked_part_number         Boolean?
+  createdAt                  DateTime  @default(now()) @map(name: "created_at")
+  updatedAt                  DateTime  @updatedAt @map(name: "updated_at")
+}
+
+ENUM {
+	
+}

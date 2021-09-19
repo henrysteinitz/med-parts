@@ -1,6 +1,7 @@
-import { AppProps } from "next/app";
+import '../styles/menubar.css'
 
-const App = ({ Component, pageProps }: AppProps) => {
+
+const App = ({ Component, pageProps }) => {
   return (
     <Component {...pageProps} />
   );
